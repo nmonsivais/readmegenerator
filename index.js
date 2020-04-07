@@ -30,6 +30,41 @@ function readmeQuestions() {
       message: "What are the installation steps?",
       name: "installSteps",
     },
+    {
+      type: "checkbox",
+      message: "What technologies did you use?",
+      choices: [
+        "HTML",
+        "JavaScript",
+        "jQuery",
+        "AJAX",
+        "CSS",
+        "Bootstrap",
+        "APIs",
+      ],
+      name: "technologies",
+    },
+    {
+      type: "checkbox",
+      message: "What license is included in your project?",
+      choices: ["MIT", "ISC", "initialCommit"],
+      name: "license",
+    },
+    {
+      type: "input",
+      message: "Usage?",
+      name: "usage",
+    },
+    {
+      type: "input",
+      message: "Who contributed to this project?",
+      name: "contributors",
+    },
+    {
+      type: "input",
+      message: "How do you run the tests?",
+      name: "runTests",
+    },
   ]);
 }
 readmeQuestions();
