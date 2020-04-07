@@ -1,11 +1,23 @@
+//Global variables
 var fs = require("fs");
 var inquirer = require("inquirer");
 var axios = require("axios");
 
-const questions = [];
+function readmeQuestions() {
+  inquirer.prompt([
+    {
+      type: "input",
+      message: "What is your first and last name?",
+      name: "name",
+    },
+  ]);
+}
+readmeQuestions();
 
-function writeToFile(fileName, data) {}
+// const questions = [];
 
-function init() {}
+// function writeToFile(fileName, data) {}
 
-init();
+// function init() {}
+
+// init();
