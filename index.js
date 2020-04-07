@@ -10,6 +10,26 @@ function readmeQuestions() {
       message: "What is your first and last name?",
       name: "name",
     },
+    {
+      type: "input",
+      message: "What is your Github Username?",
+      name: "userName",
+    },
+    {
+      type: "input",
+      message: "Briefly describe your project.",
+      name: "description",
+    },
+    {
+      type: "input",
+      message: "What is the name of your project?",
+      name: "projectName",
+    },
+    {
+      type: "input",
+      message: "What are the installation steps?",
+      name: "installSteps",
+    },
   ]);
 }
 readmeQuestions();
