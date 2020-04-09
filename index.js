@@ -1,10 +1,8 @@
 //Global variables
 var fs = require("fs");
 var inquirer = require("inquirer");
-var axios = require("axios");
-require("dotenv").config();
 
-console.log(process.env);
+
 
 function readmeQuestions() {
   inquirer.prompt([
