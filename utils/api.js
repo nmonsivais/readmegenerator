@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 const axios = require("axios");
 
 
@@ -15,6 +15,7 @@ const api = {
   },
 };
 
-api.getUser("nmonsivais");
+// api.getUser("nmonsivais");
 
+//This object (api) is open to other files by doing module.exports
 module.exports = api;

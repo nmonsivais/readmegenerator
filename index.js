@@ -1,7 +1,12 @@
 //Global variables
+require('dotenv').config();
 var fs = require("fs");
 var inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdownd");
+const api = require("./utils/api");
+const questions = inquirer;
 
+// api.getUser("nmonsivais");
 
 
 function readmeQuestions() {
@@ -66,14 +71,18 @@ function readmeQuestions() {
       message: "How do you run the tests?",
       name: "runTests",
     },
-  ]);
+  ])
+
+    .then(function (answers) {
+      let username = answers.username;
+      generateMarkdown(username, answers);
+    });
 }
+
 readmeQuestions();
 
-// const questions = [];
+module.exports = questions;
 
-// function writeToFile(fileName, data) {}
+function init() { }
 
-// function init() {}
-
-// init();
+init();
