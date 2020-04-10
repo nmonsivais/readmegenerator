@@ -1,33 +1,47 @@
-
+var fs = require("fs");
 
 function generateMarkdown(response, answers) {
-  console.log(response, answers);
-  return `
-  # Title
+  var userInfo = `
 
-  ![Badge](https://img.shields.io/static/v1?label=License&message=MIT&color=COLOR?style=plastic)
+<img src = "![Badge](https://img.shields.io/static/v1?label=License&message=MIT&color=COLOR?style=plastic)">
 
-  #Description of Project
+# Title of Project
+${answers.projectName};
 
-  #Table of Contents
+#Description of Project
+${ answers.description}
 
-  #Installation Steps
+#Table of Contents
 
-  #Usage
+#Installation Steps
+${ answers.installSteps}
 
-  #License
+#Usage
+${ answers.usage}
 
-  #License
+#Type of License
+${ answers.license}
 
-  #Contributors
+#Technologies Used
+${ answers.technologies}
 
-  #Tests
+#Contributors
+${ answers.contributors}
 
-  #Questions?
+#Tests
+${ answers.runTests}
 
- 
+#Questions ?
+Email me @:`
 
-  `;
+
+  fs.writeFile("autoREADME.md", userInfo, function (error) {
+    if (error) {
+      return console.log(error);
+    }
+    console.log("Success");
+  })
 }
+
 
 module.exports = generateMarkdown;

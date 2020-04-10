@@ -1,6 +1,5 @@
 //Global variables
 require('dotenv').config();
-var fs = require("fs");
 var inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdownd");
 const api = require("./utils/api");
@@ -23,18 +22,30 @@ function readmeQuestions() {
     },
     {
       type: "input",
-      message: "Briefly describe your project.",
-      name: "description",
-    },
-    {
-      type: "input",
       message: "What is the name of your project?",
       name: "projectName",
     },
     {
       type: "input",
+      message: "Briefly describe your project.",
+      name: "description",
+    },
+
+    {
+      type: "input",
       message: "What are the installation steps?",
       name: "installSteps",
+    },
+    {
+      type: "input",
+      message: "Usage?",
+      name: "usage",
+    },
+    {
+      type: "checkbox",
+      message: "What license is included in your project?",
+      choices: ["MIT", "ISC", "initialCommit"],
+      name: "license",
     },
     {
       type: "checkbox",
@@ -51,17 +62,6 @@ function readmeQuestions() {
       name: "technologies",
     },
     {
-      type: "checkbox",
-      message: "What license is included in your project?",
-      choices: ["MIT", "ISC", "initialCommit"],
-      name: "license",
-    },
-    {
-      type: "input",
-      message: "Usage?",
-      name: "usage",
-    },
-    {
       type: "input",
       message: "Who contributed to this project?",
       name: "contributors",
@@ -75,7 +75,7 @@ function readmeQuestions() {
 
     .then(function (answers) {
       let username = answers.username;
-      generateMarkdown(username, answers);
+      api.getUser(username);
     });
 }
 
